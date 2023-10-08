@@ -21,7 +21,7 @@ class Solution:
         i-=1;
         j+=1; 
         count-=2;
-    return "".join(a);
+    return "".join();
 
 if __name__ == '__main__':
     s = Solution();
