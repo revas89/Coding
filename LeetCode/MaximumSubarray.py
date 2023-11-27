@@ -1,22 +1,22 @@
-class Solution:
-    def maxSubarraySum(self,k,array) -> int:
+class Solution:    
+      def findMaxSumSubArray(self,k, arr):
         maxSum = 0
-        if k > len(array):
-            return 0;
+        arrsum = 0
+        windowstart = 0
+        for windowend in range(len(arr)):
+          arrsum+=arr[windowend]
         
-        for i in range(len(array)-k+1):
-            sum=0
-            for j in range(i,i+k):
-                sum+=array[j]
-            
-            if sum>maxSum:
-                maxSum = sum            
+          if windowend>=k-1:
+            maxSum = max(arrsum,maxSum)
+            arrsum-=arr[windowstart]
+            windowstart+=1
         
-        return maxSum             
+        return maxSum
+           
     
 def main():
         sol = Solution()
-        result = sol.maxSubarraySum(5, [1, 3, 2, 6, -1, 4, 1, 8, 2])
-        print("Averages of subarrays of size K: " + str(result))
+        result = sol.findMaxSumSubArray(1, [1, 2, 3, 4, 5])
+        print(str(result))
 
 main()
