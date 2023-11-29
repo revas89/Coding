@@ -21,7 +21,8 @@ class Solution:
     if not resultingArray:
         return 0
     else:
-        return len(min((resultingArray),key=lambda x:len(x)))    
+        #return len(min((resultingArray),key=lambda x:len(x))) 
+        return resultingArray   
 
 def main():
     s = Solution()
