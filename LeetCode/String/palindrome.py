@@ -19,9 +19,24 @@ class Solution:
                 return False;
             
         return True;   
+    def isPalindrome2(self,teststr):
+        teststr = "".join(c for c in teststr.lower() if c.isalpha())
+        print(teststr)
+        first = 0
+        last = len(teststr)-1
+        while first<=last :
+            if teststr[first]!=teststr[last]:
+                return False
+            first+=1
+            last-=1
+        
+        return True
             
+        
+        
+                  
 if __name__ == '__main__':
     s = Solution();
-    print(s.isPalindrome("A man, a plan, a canal, Panama!"))        
+    print(s.isPalindrome2("A man, a plan, a canal, Panama!"))        
          
     
